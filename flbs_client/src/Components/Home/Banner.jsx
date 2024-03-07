@@ -12,9 +12,9 @@ const Banner = () => {
         {/* heading ends  */}
 
         {/* flight book form starts  */}
-        <div className="flightBookForm bg-gray-50 border border-gray-300  w-[88%] m-auto py-8 px-5 rounded-md shadow-xl  ">
+        <div className="flightBookForm bg-gray-50 border border-gray-300  w-[88%] m-auto py-10 px-5 rounded-md shadow-xl  ">
           <form
-            className="      "
+            className=" relative     "
             // onSubmit={handleSubmit(handleLogin)}
           >
             {/* form top , trip select section starts  */}
@@ -142,6 +142,14 @@ const Banner = () => {
               {/*  */}
             </div>
             {/* form bottom section ends  */}
+
+            {/* search button starts  */}
+            <div className="searchBtn">
+              <button className=" py-2 px-8 bg-[#EB1933] text-gray-50 font-medium  rounded  absolute -bottom-[60%] left-[50%] transform -translate-x-1/2 -translate-y-1/2  ">
+                Search
+              </button>
+            </div>
+            {/* search button ends  */}
 
             {/*  */}
           </form>
