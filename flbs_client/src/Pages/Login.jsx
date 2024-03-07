@@ -9,6 +9,7 @@ import { loggedInSuccessfully } from "../Utils/ToastFunctions";
 
 const Login = () => {
   const { user, loading, loginFunction } = UseAuth();
+  const navigate = useNavigate();
 
   //   use form hook
   const {

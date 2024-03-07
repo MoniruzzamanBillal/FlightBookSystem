@@ -24,13 +24,18 @@ const userNavLinks = [
 ];
 
 const NavBar = () => {
-  const { user } = UseAuth();
+  const { user, logoutFunction } = UseAuth();
   const [toggle, setToggle] = useState(false);
   const [navToggle, setNavToggle] = useState(false);
   const [photourl, setPhotoUrl] = useState(user?.photoURL);
 
   const handleToggle = () => {
     setNavToggle(!navToggle);
+  };
+
+  // logout function
+  const handleLogout = () => {
+    logoutFunction();
   };
 
   // use effect to handle user photourl
@@ -74,20 +79,25 @@ const NavBar = () => {
         {/* nav right starts  */}
         <div className="navRight flex justify-between items-center gap-x-4   ">
           {/* user avatar starts  */}
-          <div className="userAvatar  flex justify-center items-center self-center gap-x-1 ">
-            <img
-              class="w-10 h-10 rounded-full  "
-              src="https://i.ibb.co/pWh468H/Shutterstock-10472278t.jpg"
-              alt="Rounded avatar"
-            />
-            <h1>user name </h1>
-          </div>
+
+          {user && (
+            <div className="userAvatar  flex justify-center items-center self-center gap-x-1 ">
+              <img
+                class="w-10 h-10 rounded-full  "
+                // src="https://i.ibb.co/pWh468H/Shutterstock-10472278t.jpg"
+                src={photourl}
+                alt="Rounded avatar"
+              />
+              <h1> {user?.displayName} </h1>
+            </div>
+          )}
+
           {/* user avatar ends  */}
 
           {user ? (
             <p
-              className=" hidden px-3 py-2 text-xs font-semibold text-white bg-gray-600 rounded  md:block hover:bg-gray-700 lg:px-4 lg:text-sm "
-              // onClick={() => handleLogout()}
+              className=" hidden px-3 py-2 text-xs font-semibold text-white bg-gray-600 rounded  md:block hover:bg-gray-700 lg:px-4 lg:text-sm cursor-pointer "
+              onClick={() => handleLogout()}
             >
               Sign out
             </p>
