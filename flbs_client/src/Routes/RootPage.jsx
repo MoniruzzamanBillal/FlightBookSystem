@@ -1,15 +1,13 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import NavBar from "../Components/Shared/NavBar";
 
 const RootPage = () => {
   return (
     <div className="mainPageCOntainer">
       {/* nav var starts  */}
-      <div className="navContainer bg-red-300  ">
-        <h1>navbar</h1>
-        <h1>navbar</h1>
-        <h1>navbar</h1>
-        <h1>navbar</h1>
+      <div className="navContainer   ">
+        <NavBar />
       </div>
       {/* nav var ends */}
 

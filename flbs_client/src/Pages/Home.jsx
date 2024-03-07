@@ -1,10 +1,11 @@
 import React from "react";
-import { useAuth } from "../Context/AuthContext";
-import { useStateContext } from "../Context/StateContext";
+
+import { UseAuth } from "../Context/AuthContext";
+import { UseStateContext } from "../Context/StateContext";
 
 const Home = () => {
-  const { test } = useAuth();
-  const { testState } = useStateContext();
+  const { test } = UseAuth();
+  const { testState } = UseStateContext();
 
   return (
     <div className="homeContainer bg-lime-400  ">
