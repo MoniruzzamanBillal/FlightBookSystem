@@ -11,3 +11,9 @@
 .active {
   color: rgb(59, 59, 243);
 }
+
+.bgImage {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}

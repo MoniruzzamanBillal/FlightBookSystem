@@ -40,7 +40,7 @@ const NavBar = () => {
 
   return (
     <div className="navContainer   ">
-      <div className="navWrapper bg-gray-300 w-[98%] m-auto flex justify-between py-2 px-4  ">
+      <div className="navWrapper bg-gray-300 m-auto flex justify-between py-2 px-6  ">
         {/* nav left starts  */}
         <div className="navLeft   flex justify-between items-center gap-x-8  ">
           {/* nav left logo starts  */}
@@ -72,7 +72,18 @@ const NavBar = () => {
         {/* nav left ends  */}
 
         {/* nav right starts  */}
-        <div className="navRight   ">
+        <div className="navRight flex justify-between items-center gap-x-4   ">
+          {/* user avatar starts  */}
+          <div className="userAvatar  flex justify-center items-center self-center gap-x-1 ">
+            <img
+              class="w-10 h-10 rounded-full  "
+              src="https://i.ibb.co/pWh468H/Shutterstock-10472278t.jpg"
+              alt="Rounded avatar"
+            />
+            <h1>user name </h1>
+          </div>
+          {/* user avatar ends  */}
+
           {user ? (
             <p
               className=" hidden px-3 py-2 text-xs font-semibold text-white bg-gray-600 rounded  md:block hover:bg-gray-700 lg:px-4 lg:text-sm "
@@ -105,7 +116,7 @@ const NavBar = () => {
 
             {navToggle && (
               <div
-                className={` menuList text-center py-2 bg-gray-700 dark:bg-gray-300 absolute transform -translate-x-1/2 -translate-y-1/2 -right-[5rem] top-[7.5rem] sm:top-[7.8rem]   w-[10rem]  `}
+                className={` menuList text-center py-2 bg-gray-700 dark:bg-gray-300 absolute transform -translate-x-1/2 -translate-y-1/2 -right-[5rem] top-[7.6rem] sm:top-[7.8rem]   w-[10rem]  `}
               >
                 <div className="mb-4 menuItem ">
                   {userNavLinks.map((ele, ind) => (
