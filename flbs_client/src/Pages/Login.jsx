@@ -51,13 +51,14 @@ const Login = () => {
     const provider = new GoogleAuthProvider(auth);
 
     signInWithPopup(auth, provider).then((response) => {
-      console.log(response?.user);
       loggedInSuccessfully();
       setTimeout(() => {
-        navigate(location?.state ? location.state : "/dashboard/profile");
+        navigate(location?.state ? location.state : "/");
       }, 1000);
     });
   };
+
+  console.log(user);
 
   return (
     <div className="loginContainer ">
