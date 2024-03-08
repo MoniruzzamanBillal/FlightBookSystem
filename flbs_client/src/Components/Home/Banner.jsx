@@ -1,7 +1,50 @@
+import { useState } from "react";
 import { BsArrowLeftRight } from "react-icons/bs";
 import { IoIosArrowDown } from "react-icons/io";
+import ShowAirport from "./ShowAirport";
+
+const startsDestination = [
+  {
+    city: "Dhaka , Bangladesh",
+    airport: "Hazrat Shahjalal International Airport",
+  },
+  {
+    city: "Chittagong , Bangladesh",
+    airport: "Shah Amanat International Airport",
+  },
+  {
+    city: "Cox's Bazar",
+    airport: "Cox's Bazar Airport",
+  },
+  {
+    city: "Cox's Bazar",
+    airport: "Cox's Bazar Airport",
+  },
+  {
+    city: "Cox's Bazar",
+    airport: "Cox's Bazar Airport",
+  },
+  {
+    city: "Cox's Bazar",
+    airport: "Cox's Bazar Airport",
+  },
+];
 
 const Banner = () => {
+  const [showStartDestination, setShowStartDestination] = useState(false);
+  const [showEndDestination, setShowEndDestination] = useState(false);
+
+  const toggleStartDestination = () => {
+    setShowStartDestination(!showStartDestination);
+    setShowEndDestination(false);
+  };
+
+  const toggleEndDestination = () => {
+    setShowEndDestination(!showEndDestination);
+    setShowStartDestination(false);
+  };
+
+  //
   return (
     <div className="bannerContainer   ">
       <div className="bannerWrapper py-8  bgImage bg-[url('https://i.ibb.co/1XWtNcK/banner.jpg')] ">
@@ -64,28 +107,50 @@ const Banner = () => {
               {/* destination input section starts  */}
               <div className="destinationContainer  flex items-center justify-between relative ">
                 {/* icon container starts / */}
-                <div className=" z-[10] iconContainer bg-gray-50 text-red-600 border border-red-400  font-semibold text-lg p-2 rounded-full absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2  ">
+                <div className=" z-[10] iconContainer bg-gray-50 text-red-600 border border-red-400  font-semibold text-lg p-2 rounded-full absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 shadow-lg  ">
                   <BsArrowLeftRight />
                 </div>
                 {/* icon container ends  */}
 
                 {/* starts destination section stars  */}
-                <div className="startDestination  w-[50%] py-2 px-7 border border-gray-400 rounded-md  cursor-pointer ">
+                <div
+                  className="startDestination  w-[50%] py-2 px-7 border border-gray-400 rounded-md  cursor-pointer relative  "
+                  onClick={() => toggleStartDestination()}
+                >
                   <h1 className="  text-gray-700 ">From</h1>
                   <h1 className="  text-gray-900 font-medium text-xl ">
                     City name{" "}
                   </h1>
                   <h1 className="  text-gray-700 text-xs ">airport name </h1>
+                  {/* airport show  */}
+                  {showStartDestination && (
+                    <div className="airportShowSection  absolute top-[5.6rem] left-[0rem] z-[10]   ">
+                      <ShowAirport airports={startsDestination} />
+                    </div>
+                  )}
+
+                  {/* airport show ends  */}
                 </div>
                 {/* starts destination section ends  */}
 
                 {/* end destination section starts  */}
-                <div className="endDestinationContainer w-[50%] py-2 px-7 border border-gray-400 rounded-md cursor-pointer ">
+                <div
+                  className="endDestinationContainer w-[50%] py-2 px-7 border border-gray-400 rounded-md cursor-pointer relative "
+                  onClick={() => toggleEndDestination()}
+                >
                   <h1 className="  text-gray-700 ">To</h1>
                   <h1 className="  text-gray-900 font-medium text-xl ">
                     City name{" "}
                   </h1>
                   <h1 className="  text-gray-700 text-xs ">airport name </h1>
+
+                  {/* airport show  */}
+                  {showEndDestination && (
+                    <div className="airportShowSection  absolute top-[5.6rem] left-[0rem] z-[10]  ">
+                      <ShowAirport />
+                    </div>
+                  )}
+                  {/* airport show ends  */}
                 </div>
                 {/* end destination section ends  */}
 
