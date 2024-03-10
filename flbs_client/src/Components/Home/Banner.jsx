@@ -1,4 +1,6 @@
 import { useState } from "react";
+
+import "react-datepicker/dist/react-datepicker.css";
 import { BsArrowLeftRight } from "react-icons/bs";
 import { IoIosArrowDown } from "react-icons/io";
 import ShowAirport from "./ShowAirport";
@@ -175,7 +177,10 @@ const Banner = () => {
                 {/* departure time section ends  */}
 
                 {/* return time section starts  */}
-                <div className="returnSection  w-[50%] py-2 px-4 border border-gray-400 rounded-r-md cursor-pointer  ">
+                <div
+                  className="returnSection  w-[50%] py-2 px-4 border border-gray-400 rounded-r-md cursor-pointer   "
+                  htmlFor="dateInput "
+                >
                   <div className=" flex flex-row gap-x-2  items-center text-gray-700 text-sm ">
                     <h1>Reurn </h1>
                     <IoIosArrowDown />

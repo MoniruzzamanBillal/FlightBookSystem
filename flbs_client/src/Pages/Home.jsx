@@ -3,13 +3,14 @@ import React from "react";
 import { UseAuth } from "../Context/AuthContext";
 import { UseStateContext } from "../Context/StateContext";
 import Banner from "../Components/Home/Banner";
+import HomeAdd from "../Components/Home/HomeAdd";
 
 const Home = () => {
   const { test, user } = UseAuth();
   const { testState } = UseStateContext();
 
   return (
-    <div className="homeContainer bg-lime-400  ">
+    <div className="homeContainer   ">
       {/* banner starts  */}
 
       <div className="bannerContainer">
@@ -17,6 +18,10 @@ const Home = () => {
       </div>
 
       {/* banner ends  */}
+
+      <div className="adContainer">
+        <HomeAdd />
+      </div>
 
       {/*  */}
     </div>
