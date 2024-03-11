@@ -2,8 +2,9 @@ import React from "react";
 
 import { UseAuth } from "../Context/AuthContext";
 import { UseStateContext } from "../Context/StateContext";
-import Banner from "../Components/Home/Banner";
 import HomeAdd from "../Components/Home/HomeAdd";
+import FlightSearch from "../Components/Shared/FlightSearch";
+import Banner from "../Components/Home/Banner";
 
 const Home = () => {
   const { test, user } = UseAuth();
@@ -14,6 +15,7 @@ const Home = () => {
       {/* banner starts  */}
 
       <div className="bannerContainer">
+        {/* <FlightSearch /> */}
         <Banner />
       </div>
 

@@ -3,6 +3,7 @@ import RootPage from "./RootPage";
 import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import SearchResult from "../Pages/SearchResult";
 
 const Routes = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const Routes = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/searchresult",
+        element: <SearchResult />,
       },
     ],
   },
