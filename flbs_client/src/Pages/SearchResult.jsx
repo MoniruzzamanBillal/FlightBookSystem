@@ -5,6 +5,7 @@ import { WiSunrise } from "react-icons/wi";
 import { IoSunnyOutline } from "react-icons/io5";
 import { BsFillSunsetFill } from "react-icons/bs";
 import CheckBoxComponent from "../Components/SearchResult/CheckBoxComponent";
+import FlightCard from "../Components/SearchResult/FlightCard";
 
 const planeTimes = [
   {
@@ -108,7 +109,7 @@ const SearchResult = () => {
             {/* refundable container ends   */}
 
             {/* airline container starts  */}
-            <div className="airlineContainer  border-b border-gray-300 py-2  ">
+            <div className="airlineContainer  py-2  ">
               <CheckBoxComponent checkboxValues={Airlines} />
             </div>
             {/* airline container ends  */}
@@ -119,11 +120,20 @@ const SearchResult = () => {
           {/*  */}
 
           {/* search right  starts  */}
-          <div className="searchRight bg-sky-300 w-[67%] rounded-md shadow-md p-2  ">
-            <h1>search right </h1>
-            <h1>search right </h1>
-            <h1>search right </h1>
-            <h1>search right </h1>
+          <div className="searchRight  w-[67%] rounded-md  p-2   ">
+            {/* heading starts  */}
+            <h1 className=" text-4xl font-semibold mb-9 text-center ">
+              Flights from Dhaka to Chittagong{" "}
+            </h1>
+            {/* heading ends  */}
+
+            {/* flight card container starts  */}
+            <div className="flightCard   ">
+              <FlightCard />
+            </div>
+            {/* flight card container ends  */}
+
+            {/*  */}
           </div>
           {/* search right  ends  */}
         </div>

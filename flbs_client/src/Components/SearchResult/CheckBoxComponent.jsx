@@ -1,11 +1,6 @@
 import React from "react";
 
 const CheckBoxComponent = ({ checkboxValues }) => {
-  //   console.log(checkboxValues);
-  //   console.log(checkboxValues[1]);
-  checkboxValues[1].map((value) => {
-    console.log(value);
-  });
   return (
     <div className="CheckBoxComponentContainer">
       <div className="CheckBoxComponentWrapper">

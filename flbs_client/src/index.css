@@ -17,3 +17,11 @@
   background-repeat: no-repeat;
   background-position: center center;
 }
+
+.primaryBg {
+  background-color: #eb1933;
+}
+
+.primaryText {
+  color: #eb1933;
+}
