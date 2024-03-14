@@ -24,6 +24,47 @@ const planeTimes = [
   },
 ];
 
+const baggageAllowance = [
+  "Baggage allowance",
+  [
+    {
+      inputId: "allowance",
+      label: "20kg",
+    },
+  ],
+];
+
+const refundable = [
+  "Refundable",
+  [
+    {
+      inputId: "refund",
+      label: "Partially refundable ",
+    },
+  ],
+];
+
+const Airlines = [
+  "Airlines",
+  [
+    {
+      inputId: "bimanBd",
+      label: "Biman Bangladesh Airlines ",
+      price: "BDT 200",
+    },
+    {
+      inputId: "novoAir",
+      label: "Novo Air ",
+      price: "BDT 200",
+    },
+    {
+      inputId: "usBangla",
+      label: "Us Bangla Airlines ",
+      price: "BDT 200",
+    },
+  ],
+];
+
 const SearchResult = () => {
   return (
     <div className="searchResultContainer  ">
@@ -40,7 +81,7 @@ const SearchResult = () => {
           {/* search result left starts  */}
           <div className="searchLeft bg-gray-50 border border-gray-100 w-[33%] rounded-md shadow-md p-2  ">
             {/* departure time starts  */}
-            <div className="departureTime  border-b border-gray-400 py-2 ">
+            <div className="departureTime  border-b border-gray-300 py-2 ">
               <h1 className=" text-lg font-semibold mb-2 ">
                 Departure time in dhaka
               </h1>
@@ -55,22 +96,20 @@ const SearchResult = () => {
             {/* departure time ends  */}
 
             {/* baggage allowance container starts  */}
-            <div className="baggageContainer  border-b border-gray-400 py-2 ">
-              <CheckBoxComponent />
+            <div className="baggageContainer  border-b border-gray-300 py-2 ">
+              <CheckBoxComponent checkboxValues={baggageAllowance} />
             </div>
             {/* baggage allowance container ends  */}
 
             {/* refundable container starts  */}
-            <div className="refundableContainer  bg-blue-200 border-b border-gray-400 py-2  ">
-              <h1>refundable container </h1>
-              <h1>refundable container </h1>
+            <div className="refundableContainer   border-b border-gray-300 py-2  ">
+              <CheckBoxComponent checkboxValues={refundable} />
             </div>
             {/* refundable container ends   */}
 
             {/* airline container starts  */}
-            <div className="airlineContainer bg-gray-200 border-b border-gray-400 py-2  ">
-              <h1>airlines</h1>
-              <h1>airlines</h1>
+            <div className="airlineContainer  border-b border-gray-300 py-2  ">
+              <CheckBoxComponent checkboxValues={Airlines} />
             </div>
             {/* airline container ends  */}
 

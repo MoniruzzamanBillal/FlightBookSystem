@@ -1,19 +1,40 @@
 import React from "react";
 
-const CheckBoxComponent = () => {
+const CheckBoxComponent = ({ checkboxValues }) => {
+  //   console.log(checkboxValues);
+  //   console.log(checkboxValues[1]);
+  checkboxValues[1].map((value) => {
+    console.log(value);
+  });
   return (
     <div className="CheckBoxComponentContainer">
       <div className="CheckBoxComponentWrapper">
         {/* heading starts  */}
-        <h1 className=" font-medium text-lg mb-2 ">Baggage allowance</h1>
+        <h1 className=" font-medium text-lg mb-2 "> {checkboxValues[0]} </h1>
         {/* heading ends  */}
 
-        {/* input container starts  */}
-        <div className="inputContainer flex items-center gap-x-1.5  ">
-          <input type="checkbox" name="" id="allowance" />
-          <label htmlFor="allowance">20 KG</label>
-        </div>
-        {/* input container endss  */}
+        {checkboxValues[1] &&
+          checkboxValues[1].map((value) => (
+            <div className="bodyContainer  flex justify-between items-center self-center ">
+              {/* input container starts  */}
+              <div className="inputContainer flex items-center gap-x-1.5  ">
+                <input type="checkbox" name="" id={value?.inputId} />
+                <label htmlFor={value?.inputId}> {value?.label} </label>
+              </div>
+              {/* input container endss  */}
+
+              {/* money container starts  */}
+              {value?.price && (
+                <div className="mnonecontainer">
+                  <h1> {value?.price} </h1>
+                </div>
+              )}
+
+              {/* money container ends 
+
+              {/*  */}
+            </div>
+          ))}
 
         {/*  */}
       </div>
