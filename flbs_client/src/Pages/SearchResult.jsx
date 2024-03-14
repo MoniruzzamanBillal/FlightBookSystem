@@ -130,6 +130,8 @@ const SearchResult = () => {
             {/* flight card container starts  */}
             <div className="flightCard   ">
               <FlightCard />
+              <FlightCard />
+              <FlightCard />
             </div>
             {/* flight card container ends  */}
 

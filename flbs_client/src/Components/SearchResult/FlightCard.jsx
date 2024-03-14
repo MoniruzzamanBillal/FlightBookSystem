@@ -1,8 +1,9 @@
 import React from "react";
+import { FaAngleDown } from "react-icons/fa";
 
 const FlightCard = () => {
   return (
-    <div className="FlightCardContainer bg-gray-50 py-3 px-5 border border-gray-100 shadow-md rounded-md   ">
+    <div className="FlightCardContainer bg-gray-50 py-3 px-5 border border-gray-100 shadow-md rounded-md my-6   ">
       <div className="FlightCardWrapper">
         {/* flight card top starts  */}
         <div className="flightCardTop mb-8 flex justify-between items-center self-center   ">
@@ -92,25 +93,36 @@ const FlightCard = () => {
           {/* left section starts  */}
           <div className="leftSection   ">
             <h1 className=" text-gray-600 text-sm ">Price </h1>
-
             {/* price section starts  */}
             <h1 className="  text-lg font-medium text-gray-600 ">BDT 4,732</h1>
             {/* price section ends  */}
-
             {/* refund section starts  */}
             <h1 className=" text-green-700 text-sm font-medium ">
               Partially Refundable
             </h1>
             {/* refund section ends  */}
-
             {/*  */}
           </div>
           {/* left section ends  */}
 
           {/* right section starts  */}
-          <div className="rightSection bg-orange-400  ">
-            <h1>right section </h1>
-            <h1>right section </h1>
+          <div className="rightSection   ">
+            {/* button container starts  */}
+            <div className="BookBtn mb-2 ">
+              <button className=" primaryBg hover:bg-red-600 py-2 px-4 rounded-md text-gray-50 hover:text-gray-100 active:scale-95 font-medium  ">
+                Book Now
+              </button>
+            </div>
+            {/* button container ends  */}
+
+            {/* flight details button starts  */}
+            <div className="detailsBtn flex justify-center items-center gap-x-1 primaryText font-medium cursor-pointer  ">
+              <h1 className="   ">Flight Details </h1>
+              <FaAngleDown className="  " />
+            </div>
+            {/* flight details button ends  */}
+
+            {/*  */}
           </div>
           {/* right section ends  */}
 
