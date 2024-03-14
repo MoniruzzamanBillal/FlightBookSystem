@@ -88,8 +88,33 @@ const FlightCard = () => {
         {/*  */}
 
         {/* flight card bottom starts  */}
-        <div className="flightCardBottom   ">
-          <h1>flight card bottom </h1>
+        <div className="flightCardBottom flex justify-between items-center    ">
+          {/* left section starts  */}
+          <div className="leftSection   ">
+            <h1 className=" text-gray-600 text-sm ">Price </h1>
+
+            {/* price section starts  */}
+            <h1 className="  text-lg font-medium text-gray-600 ">BDT 4,732</h1>
+            {/* price section ends  */}
+
+            {/* refund section starts  */}
+            <h1 className=" text-green-700 text-sm font-medium ">
+              Partially Refundable
+            </h1>
+            {/* refund section ends  */}
+
+            {/*  */}
+          </div>
+          {/* left section ends  */}
+
+          {/* right section starts  */}
+          <div className="rightSection bg-orange-400  ">
+            <h1>right section </h1>
+            <h1>right section </h1>
+          </div>
+          {/* right section ends  */}
+
+          {/*  */}
         </div>
         {/* flight card bottom ends  */}
       </div>
