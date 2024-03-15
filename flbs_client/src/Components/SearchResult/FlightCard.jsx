@@ -7,9 +7,42 @@ import FareRules from "./FareRules";
 
 const FlightCard = () => {
   const [openFlightDetail, setFlightDetail] = useState(false);
-  const [showFlightDetail, setShowFlightDetail] = useState(false);
+  const [showFlightDetail, setShowFlightDetail] = useState(true);
   const [showFareSummary, setShowFareSummary] = useState(false);
-  const [showFareRules, setShowFareRules] = useState(true);
+  const [showFareRules, setShowFareRules] = useState(false);
+
+  const handleShowFlightDetails = () => {
+    if (openFlightDetail && showFlightDetail) {
+      setShowFlightDetail(true);
+    } else {
+      setShowFlightDetail(!showFlightDetail);
+    }
+
+    setShowFareSummary(false);
+    setShowFareRules(false);
+  };
+
+  const handleShowFareSummary = () => {
+    if (openFlightDetail && showFareSummary) {
+      setShowFareSummary(true);
+    } else {
+      setShowFareSummary(!showFareSummary);
+    }
+
+    setShowFlightDetail(false);
+    setShowFareRules(false);
+  };
+
+  const handleShowFareRules = () => {
+    if (openFlightDetail && showFareRules) {
+      setShowFareRules(true);
+    } else {
+      setShowFareRules(!showFareRules);
+    }
+
+    setShowFlightDetail(false);
+    setShowFareSummary(false);
+  };
 
   return (
     <div className="FlightCardContainer bg-gray-50 py-3 px-5 border border-gray-100 shadow-md rounded-md my-6   ">
@@ -152,13 +185,28 @@ const FlightCard = () => {
         >
           {/* flight detail top section starts  */}
           <div className="detailTopSection flex items-center py-2  mb-3  ">
-            <p className=" cursor-pointer px-3 py-1 border border-gray-400  ">
-              Flight Details{" "}
+            <p
+              onClick={() => handleShowFlightDetails()}
+              className={` ${
+                showFlightDetail ? " primaryBg text-gray-50 " : "  "
+              } cursor-pointer px-3 py-1 border border-gray-400  font-medium  `}
+            >
+              Flight Details
             </p>
-            <p className=" cursor-pointer  px-3 py-1 border border-gray-400 ">
+            <p
+              onClick={() => handleShowFareSummary()}
+              className={` ${
+                showFareSummary ? " primaryBg text-gray-50 " : "  "
+              } cursor-pointer  px-3 py-1 border border-gray-400  font-medium `}
+            >
               Fare Summary{" "}
             </p>
-            <p className=" cursor-pointer px-3 py-1 border border-gray-400  ">
+            <p
+              onClick={() => handleShowFareRules()}
+              className={` ${
+                showFareRules ? " primaryBg text-gray-50 " : "  "
+              } cursor-pointer px-3 py-1 border border-gray-400  font-medium `}
+            >
               Fare Rules
             </p>
           </div>
