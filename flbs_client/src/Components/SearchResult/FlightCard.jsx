@@ -3,12 +3,13 @@ import { FaAngleDown } from "react-icons/fa";
 import { FaAngleUp } from "react-icons/fa";
 import FlightDetail from "./FlightDetail";
 import FareSummary from "./FareSummary";
+import FareRules from "./FareRules";
 
 const FlightCard = () => {
   const [openFlightDetail, setFlightDetail] = useState(false);
   const [showFlightDetail, setShowFlightDetail] = useState(false);
-  const [showFareSummary, setShowFareSummary] = useState(true);
-  const [showFareRules, setShowFareRules] = useState(false);
+  const [showFareSummary, setShowFareSummary] = useState(false);
+  const [showFareRules, setShowFareRules] = useState(true);
 
   return (
     <div className="FlightCardContainer bg-gray-50 py-3 px-5 border border-gray-100 shadow-md rounded-md my-6   ">
@@ -183,10 +184,8 @@ const FlightCard = () => {
           {/* fare rules container starts  */}
 
           {showFareRules && (
-            <div className="fareRulesContainer bg-fuchsia-400  ">
-              <h1>fare rules</h1>
-              <h1>fare rules</h1>
-              <h1>fare rules</h1>
+            <div className="fareRulesContainer   ">
+              <FareRules />
             </div>
           )}
 
