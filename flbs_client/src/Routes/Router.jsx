@@ -4,6 +4,7 @@ import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import SearchResult from "../Pages/SearchResult";
+import BookFlight from "../Pages/BookFlight";
 
 const Routes = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const Routes = createBrowserRouter([
       {
         path: "/searchresult",
         element: <SearchResult />,
+      },
+      {
+        path: "/book",
+        element: <BookFlight />,
       },
     ],
   },
