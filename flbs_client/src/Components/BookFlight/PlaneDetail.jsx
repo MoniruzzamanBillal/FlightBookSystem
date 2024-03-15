@@ -3,9 +3,9 @@ import React from "react";
 const PlaneDetail = () => {
   return (
     <div className="PlaneDetailContainer">
-      <div className="PlaneDetailWraqpper    ">
+      <div className="PlaneDetailWraqpper  bg-gray-50 rounded-md border border-gray-200 shadow-md py-4 px-3  ">
         {/* plane detail top starts  */}
-        <div className="detailTop   flex justify-between items-center    ">
+        <div className="detailTop   flex justify-between items-center border-b border-gray-300 py-5   ">
           {/* detail left starts  */}
           <div className="detailLeft  flex justify-between items-center gap-x-4  ">
             {/* left logo starts  */}
@@ -41,6 +41,54 @@ const PlaneDetail = () => {
           {/* detail right ends  */}
         </div>
         {/* plane detail top ends  */}
+
+        {/* plane detail bottom starts  */}
+        {/* flight detail section starts  */}
+        <div className="flightDetailContainer pt-4 flex justify-evenly ">
+          {/* deeparture info starts  */}
+          <div className="departure  ">
+            <h1 className=" departureTime text-sm text-gray-600 mb-1.5 ">
+              Depart
+            </h1>
+            <h1 className=" departureTime font-medium  ">14:35</h1>
+            <h1 className=" departureDate text-gray-600 text-sm mb-1.5 ">
+              Fri, 15 Mar 2024
+            </h1>
+            <h1 className="  text-gray-700 text-sm font-medium ">Dhaka</h1>
+          </div>
+          {/* deeparture info ends  */}
+
+          {/* flight duration info starts  */}
+          <div className="flightDurationInfo  flex flex-col justify-center items-center  ">
+            <h1 className=" flightDuration text-gray-700 text-sm text-center ">
+              45 minutes{" "}
+            </h1>
+            <img
+              src="https://i.ibb.co/8dXwmxt/non-stop-shape-removebg-preview.png"
+              alt=""
+            />
+          </div>
+          {/* flight duration info ends  */}
+
+          {/* arrival info starts  */}
+          <div className="arriveInfo   ">
+            <h1 className=" departureTime text-sm text-gray-600 mb-1.5 ">
+              Arrive
+            </h1>
+            <h1 className=" departureTime font-medium  ">14:35</h1>
+            <h1 className=" departureDate text-gray-600 text-sm mb-1.5 ">
+              Fri, 15 Mar 2024
+            </h1>
+            <h1 className="  text-gray-700 text-sm font-medium  ">
+              Chittagong
+            </h1>
+          </div>
+          {/* arrival info ends  */}
+
+          {/*  */}
+        </div>
+        {/* flight detail section ends  */}
+        {/* plane detail bottom ends  */}
       </div>
     </div>
   );
