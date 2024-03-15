@@ -2,9 +2,14 @@ import React, { useState } from "react";
 import { FaAngleDown } from "react-icons/fa";
 import { FaAngleUp } from "react-icons/fa";
 import FlightDetail from "./FlightDetail";
+import FareSummary from "./FareSummary";
 
 const FlightCard = () => {
   const [openFlightDetail, setFlightDetail] = useState(false);
+  const [showFlightDetail, setShowFlightDetail] = useState(false);
+  const [showFareSummary, setShowFareSummary] = useState(true);
+  const [showFareRules, setShowFareRules] = useState(false);
+
   return (
     <div className="FlightCardContainer bg-gray-50 py-3 px-5 border border-gray-100 shadow-md rounded-md my-6   ">
       <div className="FlightCardWrapper">
@@ -131,15 +136,12 @@ const FlightCard = () => {
               )}
             </div>
             {/* flight details button ends  */}
-
             {/*  */}
           </div>
           {/* right section ends  */}
-
           {/*  */}
         </div>
         {/* flight card bottom ends  */}
-        {/* flight detail container starts  */}
 
         {/* flight detail container starts  */}
         <div
@@ -148,7 +150,6 @@ const FlightCard = () => {
           }   flightDetailContainer mt-3 pt-2 border-t border-gray-300 transition-all duration-300`}
         >
           {/* flight detail top section starts  */}
-
           <div className="detailTopSection flex items-center py-2  mb-3  ">
             <p className=" cursor-pointer px-3 py-1 border border-gray-400  ">
               Flight Details{" "}
@@ -163,10 +164,33 @@ const FlightCard = () => {
           {/* flight detail top section ends   */}
 
           {/* flight detail container starts  */}
-          <div className="flightDetailContainer">
-            <FlightDetail />
-          </div>
+          {showFlightDetail && (
+            <div className="flightDetailContainer">
+              <FlightDetail />
+            </div>
+          )}
           {/* flight detail container ends  */}
+
+          {/* fare summary container starts  */}
+          {showFareSummary && (
+            <div className="fareSummaryContainer  ">
+              <FareSummary />
+            </div>
+          )}
+
+          {/* fare summary container ends  */}
+
+          {/* fare rules container starts  */}
+
+          {showFareRules && (
+            <div className="fareRulesContainer bg-fuchsia-400  ">
+              <h1>fare rules</h1>
+              <h1>fare rules</h1>
+              <h1>fare rules</h1>
+            </div>
+          )}
+
+          {/* fare rules container ends  */}
 
           {/*  */}
         </div>
