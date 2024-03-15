@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import FlightSearch from "../Components/Shared/FlightSearch";
 import DepartureTimes from "../Components/SearchResult/DepartureTimes";
 import { WiSunrise } from "react-icons/wi";
@@ -129,8 +129,6 @@ const SearchResult = () => {
 
             {/* flight card container starts  */}
             <div className="flightCard   ">
-              <FlightCard />
-              <FlightCard />
               <FlightCard />
             </div>
             {/* flight card container ends  */}

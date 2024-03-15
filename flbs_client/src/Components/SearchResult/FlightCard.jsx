@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaAngleDown } from "react-icons/fa";
+import { FaAngleUp } from "react-icons/fa";
+import FlightDetail from "./FlightDetail";
 
 const FlightCard = () => {
+  const [openFlightDetail, setFlightDetail] = useState(false);
   return (
     <div className="FlightCardContainer bg-gray-50 py-3 px-5 border border-gray-100 shadow-md rounded-md my-6   ">
       <div className="FlightCardWrapper">
@@ -116,9 +119,16 @@ const FlightCard = () => {
             {/* button container ends  */}
 
             {/* flight details button starts  */}
-            <div className="detailsBtn flex justify-center items-center gap-x-1 primaryText font-medium cursor-pointer  ">
+            <div
+              className="detailsBtn flex justify-center items-center gap-x-1 primaryText font-medium cursor-pointer  "
+              onClick={() => setFlightDetail(!openFlightDetail)}
+            >
               <h1 className="   ">Flight Details </h1>
-              <FaAngleDown className="  " />
+              {openFlightDetail ? (
+                <FaAngleDown className="  " />
+              ) : (
+                <FaAngleUp className="  " />
+              )}
             </div>
             {/* flight details button ends  */}
 
@@ -129,6 +139,38 @@ const FlightCard = () => {
           {/*  */}
         </div>
         {/* flight card bottom ends  */}
+        {/* flight detail container starts  */}
+
+        {/* flight detail container starts  */}
+        <div
+          className={`${
+            openFlightDetail ? "block" : "hidden"
+          }   flightDetailContainer mt-3 pt-2 border-t border-gray-300 transition-all duration-300`}
+        >
+          {/* flight detail top section starts  */}
+
+          <div className="detailTopSection flex items-center py-2  mb-3  ">
+            <p className=" cursor-pointer px-3 py-1 border border-gray-400  ">
+              Flight Details{" "}
+            </p>
+            <p className=" cursor-pointer  px-3 py-1 border border-gray-400 ">
+              Fare Summary{" "}
+            </p>
+            <p className=" cursor-pointer px-3 py-1 border border-gray-400  ">
+              Fare Rules
+            </p>
+          </div>
+          {/* flight detail top section ends   */}
+
+          {/* flight detail container starts  */}
+          <div className="flightDetailContainer">
+            <FlightDetail />
+          </div>
+          {/* flight detail container ends  */}
+
+          {/*  */}
+        </div>
+        {/* flight detail container ends  */}
       </div>
     </div>
   );
