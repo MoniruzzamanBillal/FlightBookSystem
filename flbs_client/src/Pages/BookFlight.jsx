@@ -1,6 +1,7 @@
 import React from "react";
 import PlaneDetail from "../Components/BookFlight/PlaneDetail";
 import PriceCalculation from "../Components/BookFlight/PriceCalculation";
+import TravelerDetailForm from "../Components/BookFlight/TravelerDetailForm";
 
 const BookFlight = () => {
   return (
@@ -14,6 +15,20 @@ const BookFlight = () => {
             <PlaneDetail />
           </div>
           {/* plane detail section ends  */}
+
+          {/* traveler detail section starts  */}
+          <div className="travelerDetail  mt-10 ">
+            <h1 className=" text-2xl font-semibold mb-4  ">
+              Enter Traveler Details{" "}
+            </h1>
+
+            {/* traveler detail form starts  */}
+            <div className="travelerDetailForm ">
+              <TravelerDetailForm />
+            </div>
+            {/* traveler detail form ends  */}
+          </div>
+          {/* traveler detail section ends  */}
 
           {/*  */}
         </div>
