@@ -15,7 +15,6 @@ const Home = () => {
       {/* banner starts  */}
 
       <div className="bannerContainer">
-        {/* <FlightSearch /> */}
         <Banner />
       </div>
 

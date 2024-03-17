@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import "react-datepicker/dist/react-datepicker.css";
 import { BsArrowLeftRight } from "react-icons/bs";
 import { IoIosArrowDown } from "react-icons/io";
 import ShowAirport from "../Home/ShowAirport";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const startsDestination = [
   {
@@ -35,6 +37,11 @@ const startsDestination = [
 const FlightSearch = () => {
   const [showStartDestination, setShowStartDestination] = useState(false);
   const [showEndDestination, setShowEndDestination] = useState(false);
+  const [startDate, setStartDate] = useState(new Date());
+  const [departureDate, setDepartureDate] = useState(new Date());
+  const [departureWeekName, setDepartureWeekName] = useState(null);
+  const [returnDate, setReturnDate] = useState(new Date());
+  const [returnWeekName, setReturnWeekName] = useState(null);
 
   const toggleStartDestination = () => {
     setShowStartDestination(!showStartDestination);
@@ -45,6 +52,40 @@ const FlightSearch = () => {
     setShowEndDestination(!showEndDestination);
     setShowStartDestination(false);
   };
+
+  // effect to get departure weekend name
+  useEffect(() => {
+    const depDate = new Date(departureDate);
+    const dayOfWeek = depDate.getDay();
+    const weekdays = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    const weekdayName = weekdays[dayOfWeek];
+    setDepartureWeekName(weekdayName);
+  }, [departureDate]);
+
+  // effect to get return weekend name
+  useEffect(() => {
+    const retDate = new Date(returnDate);
+    const dayOfWeek = retDate.getDay();
+    const weekdays = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    const weekdayName = weekdays[dayOfWeek];
+    setReturnWeekName(weekdayName);
+  }, [returnDate]);
 
   //
   return (
@@ -163,10 +204,17 @@ const FlightSearch = () => {
                     <IoIosArrowDown />
                   </div>
 
-                  <h1 className=" text-gray-900 font-semibold text-lg ">
-                    7 Mar 2024
-                  </h1>
-                  <h1 className=" text-gray-700 text-xs ">Thursday</h1>
+                  <DatePicker
+                    selected={departureDate}
+                    onChange={(date) => setDepartureDate(date)}
+                    dateFormat="d MMMM yyyy"
+                    className="  text-xl border-none outline-none  w-full bg-gray-50 cursor-pointer font-medium "
+                  />
+                  {departureWeekName && (
+                    <h1 className=" text-gray-700 text-xs ">
+                      {departureWeekName}
+                    </h1>
+                  )}
                 </div>
                 {/* departure time section ends  */}
 
@@ -176,14 +224,21 @@ const FlightSearch = () => {
                   htmlFor="dateInput "
                 >
                   <div className=" flex flex-row gap-x-2  items-center text-gray-700 text-sm ">
-                    <h1>Reurn </h1>
+                    <h1>Return </h1>
                     <IoIosArrowDown />
                   </div>
 
-                  <h1 className=" text-gray-900 font-semibold text-lg ">
-                    7 Mar 2024
-                  </h1>
-                  <h1 className=" text-gray-700 text-xs ">Thursday</h1>
+                  <DatePicker
+                    selected={returnDate}
+                    onChange={(date) => setReturnDate(date)}
+                    dateFormat="d MMMM yyyy"
+                    className="  text-xl border-none outline-none  w-full bg-gray-50 cursor-pointer font-medium "
+                  />
+                  {returnWeekName && (
+                    <h1 className=" text-gray-700 text-xs ">
+                      {returnWeekName}
+                    </h1>
+                  )}
                 </div>
                 {/* return time section ends  */}
 
