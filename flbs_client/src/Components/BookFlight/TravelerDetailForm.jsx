@@ -7,14 +7,14 @@ const TravelerDetailForm = () => {
   const [startDate, setStartDate] = useState(new Date());
   return (
     <div className="TravelerDetailFormContainer">
-      <div className="TravelerDetailFormWrapper py-4 px-6  bg-gray-50 border border-gray-200 rounded-md shadow-lg  ">
+      <div className="TravelerDetailFormWrapper py-4 px-6  bg-gray-50 border border-gray-200 rounded-md shadow  ">
         <h1 className=" text-2xl font-medium py-2  "> Traveler 1 </h1>
         <h1 className=" text-2xl font-medium py-2 text-gray-800 ">
           Personal Details (Adult)
         </h1>
 
         {/* form container starts */}
-        <div className="formContainer mt-4 grid grid-cols-2 gap-x-8 gap-y-5  ">
+        <div className="formContainer py-6 grid grid-cols-2 gap-x-8 gap-y-5  ">
           {/*first  name input starts  */}
           <div className="nameInput">
             <label
@@ -50,6 +50,44 @@ const TravelerDetailForm = () => {
             />
           </div>
           {/*last  name input ends   */}
+
+          {/* email input starts  */}
+          <div className="emailInput">
+            <label
+              for="email"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-md outline-none block w-full p-2.5 "
+              placeholder="Email"
+              required
+            />
+          </div>
+          {/* email input ends  */}
+
+          {/* contact number info starts  */}
+          <div className="contactInfo">
+            <div className="emailInput">
+              <label
+                for="contact"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >
+                Contact
+              </label>
+              <input
+                type="number"
+                id="contact"
+                className="bg-gray-50 border border-gray-400 text-gray-900 text-sm rounded-md outline-none block w-full p-2.5 "
+                placeholder="Contact number"
+                required
+              />
+            </div>
+          </div>
+          {/* contact number info ends  */}
 
           {/* date of birth input starts  */}
           <div className="dateOfBirthInput">
