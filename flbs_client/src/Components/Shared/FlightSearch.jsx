@@ -40,7 +40,7 @@ const FlightSearch = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [departureDate, setDepartureDate] = useState(new Date());
   const [departureWeekName, setDepartureWeekName] = useState(null);
-  const [returnDate, setReturnDate] = useState(new Date());
+  const [returnDate, setReturnDate] = useState();
   const [returnWeekName, setReturnWeekName] = useState(null);
 
   const toggleStartDestination = () => {
@@ -220,24 +220,47 @@ const FlightSearch = () => {
 
                 {/* return time section starts  */}
                 <div
-                  className="returnSection  w-[50%] py-2 px-4 border border-gray-400 rounded-r-md cursor-pointer   "
+                  className={` returnSection  ${
+                    returnDate ? " h-auto " : " h-[5.1rem]"
+                  }   w-[50%] py-2 px-4 border border-gray-400 rounded-r-md cursor-pointer    `}
                   htmlFor="dateInput "
                 >
-                  <div className=" flex flex-row gap-x-2  items-center text-gray-700 text-sm ">
+                  <div className="  flex flex-row gap-x-2  items-center text-gray-700 text-sm ">
                     <h1>Return </h1>
                     <IoIosArrowDown />
                   </div>
 
-                  <DatePicker
-                    selected={returnDate}
-                    onChange={(date) => setReturnDate(date)}
-                    dateFormat="d MMMM yyyy"
-                    className="  text-xl border-none outline-none  w-full bg-gray-50 cursor-pointer font-medium "
-                  />
-                  {returnWeekName && (
-                    <h1 className=" text-gray-700 text-xs ">
-                      {returnWeekName}
-                    </h1>
+                  {returnDate ? (
+                    <div>
+                      <DatePicker
+                        id="returnDate"
+                        selected={returnDate}
+                        onChange={(date) => setReturnDate(date)}
+                        dateFormat="d MMMM yyyy"
+                        className="  text-xl border-none outline-none  w-full bg-gray-50 cursor-pointer font-medium "
+                      />
+                      {returnWeekName && (
+                        <h1 className=" text-gray-700 text-xs ">
+                          {returnWeekName}
+                        </h1>
+                      )}
+                    </div>
+                  ) : (
+                    <div className="  ">
+                      <label
+                        htmlFor="returnDate"
+                        className=" cursor-pointer font-medium "
+                      >
+                        Tap to book return ticket
+                      </label>{" "}
+                      <DatePicker
+                        id="returnDate"
+                        selected={returnDate}
+                        onChange={(date) => setReturnDate(date)}
+                        dateFormat="d MMMM yyyy"
+                        className=" hidden text-xl border-none outline-none  w-full bg-gray-50 cursor-pointer font-medium "
+                      />{" "}
+                    </div>
                   )}
                 </div>
                 {/* return time section ends  */}

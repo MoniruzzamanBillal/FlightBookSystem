@@ -17,6 +17,14 @@ const Routes = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: "/searchresult",
+        element: <SearchResult />,
+      },
+      {
+        path: "/book",
+        element: <BookFlight />,
+      },
+      {
         path: "/about",
         element: <p>About </p>,
       },
@@ -28,14 +36,7 @@ const Routes = createBrowserRouter([
         path: "/register",
         element: <Register />,
       },
-      {
-        path: "/searchresult",
-        element: <SearchResult />,
-      },
-      {
-        path: "/book",
-        element: <BookFlight />,
-      },
+
       {
         path: "/test",
         element: <Test />,
