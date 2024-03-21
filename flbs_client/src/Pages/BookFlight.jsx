@@ -1,4 +1,3 @@
-import React from "react";
 import PlaneDetail from "../Components/BookFlight/PlaneDetail";
 import PriceCalculation from "../Components/BookFlight/PriceCalculation";
 import TravelerDetailForm from "../Components/BookFlight/TravelerDetailForm";

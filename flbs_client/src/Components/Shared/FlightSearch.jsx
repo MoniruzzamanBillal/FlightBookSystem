@@ -6,6 +6,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import ShowAirport from "../Home/ShowAirport";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import TravelerNumber from "./TravelerNumber";
 
 const startsDestination = [
   {
@@ -37,11 +38,11 @@ const startsDestination = [
 const FlightSearch = () => {
   const [showStartDestination, setShowStartDestination] = useState(false);
   const [showEndDestination, setShowEndDestination] = useState(false);
-  const [startDate, setStartDate] = useState(new Date());
   const [departureDate, setDepartureDate] = useState(new Date());
   const [departureWeekName, setDepartureWeekName] = useState(null);
   const [returnDate, setReturnDate] = useState();
   const [returnWeekName, setReturnWeekName] = useState(null);
+  const [clickTraveler, setClickTravel] = useState(false);
 
   const toggleStartDestination = () => {
     setShowStartDestination(!showStartDestination);
@@ -51,6 +52,11 @@ const FlightSearch = () => {
   const toggleEndDestination = () => {
     setShowEndDestination(!showEndDestination);
     setShowStartDestination(false);
+  };
+
+  //  function for open traveler number , class modal
+  const openTravelModal = () => {
+    setClickTravel(!clickTraveler);
   };
 
   // effect to get departure weekend name
@@ -105,7 +111,7 @@ const FlightSearch = () => {
                   id="oneWay"
                   type="checkbox"
                   value=""
-                  class="w-4 h-4 border border-gray-300  bg-gray-50   "
+                  className="w-4 h-4 border border-gray-300  bg-gray-50   "
                   required
                 />
                 <label
@@ -116,14 +122,13 @@ const FlightSearch = () => {
                 </label>
               </div>
               {/* one way trip section ends  */}
-
               {/* round trip section starts  */}
               <div className="roundTrip  flex flex-row  items-center gap-x-2 ">
                 <input
                   id="roundTrip"
                   type="checkbox"
                   value=""
-                  class="w-4 h-4 border border-gray-300  bg-gray-50   "
+                  className="w-4 h-4 border border-gray-300  bg-gray-50   "
                   required
                 />
                 <label
@@ -134,7 +139,6 @@ const FlightSearch = () => {
                 </label>
               </div>
               {/* round trip section ends  */}
-
               {/*  */}
             </div>
             {/* form top , trip select section ends  */}
@@ -249,7 +253,7 @@ const FlightSearch = () => {
                     <div className="  ">
                       <label
                         htmlFor="returnDate"
-                        className=" cursor-pointer font-medium "
+                        className=" cursor-pointer font-medium  w-full block "
                       >
                         Tap to book return ticket
                       </label>{" "}
@@ -270,7 +274,10 @@ const FlightSearch = () => {
               {/* date ,,time section ends  */}
 
               {/* traavel details section starts  */}
-              <div className="travelDetails  py-2 px-4 rounded-md border border-gray-400 cursor-pointer  ">
+              <div
+                className="travelDetails  py-2 px-4 rounded-md border border-gray-400 cursor-pointer relative   "
+                onClick={() => openTravelModal()}
+              >
                 <h1 className="  text-gray-700 text-sm ">
                   Travel and booking class{" "}
                 </h1>
@@ -278,6 +285,15 @@ const FlightSearch = () => {
                   1 traveler
                 </h1>
                 <h1 className="  text-gray-700 text-xs  ">Economy</h1>
+
+                <div
+                  className={`travelerNumForm ${
+                    clickTraveler ? "absolute" : "hidden"
+                  }   transform -translate-x-1/2 -translate-y-1/2 top-[14.6rem] right-[-5rem] py-5 px-3 rounded-md bg-white border border-gray-200 shadow-lg `}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <TravelerNumber />
+                </div>
               </div>
               {/* traavel details section ends  */}
 
