@@ -12,7 +12,7 @@ const HomeAdd = () => {
 
         {/* paragraph section starts  */}
         <div className="paraContainer   bg-[#FF2540]   ">
-          <div className="paraWraper text-gray-50 w-[90%] m-auto bgImage bg-[url('https://i.ibb.co/ccjHPwW/explore-ezgif-com-webp-to-jpg-converter.jpg')] py-28 ">
+          <div className="paraWraper text-gray-50 w-[90%] m-auto bgImage bg-[url('https://i.ibb.co/ccjHPwW/explore-ezgif-com-webp-to-jpg-converter.jpg')] py-[7.1rem] ">
             {/* heading  starts  */}
             <h1 className=" text-4xl font-medium mb-4 ">
               {" "}
